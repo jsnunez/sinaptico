@@ -14,7 +14,25 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+        @keyframes destello {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Sombra inicial */
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 1); /* Sombra brillante */
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Vuelve a la sombra inicial */
+  }
+}
 
+/* Aplicar la animación al círculo cuando se pasa el ratón sobre la tarjeta */
+ .circle-button {
+  animation: destello 1s infinite; /* Animación de destello cada 1 segundo */
+}
         body {
             background-color: #f5f5f7;
         }
@@ -118,6 +136,7 @@
             transform: rotateY(180deg);
             padding: 30px;
         }
+   
 
         .card-icon {
             width: 80px;
