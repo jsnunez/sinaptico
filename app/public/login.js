@@ -4,7 +4,7 @@ document.getElementById("login-form").addEventListener("submit",async (e)=>{
   e.preventDefault();
   const email = e.target.children.user.value;
   const password = e.target.children.password.value;
-  const res = await fetch("hhttps://sinaptico-production.up.railway.app/api/login",{
+  const res = await fetch("https://sinaptico-production.up.railway.app/api/login",{
     method:"POST",
     headers:{
       "Content-Type":"application/json"
