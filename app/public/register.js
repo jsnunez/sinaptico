@@ -35,5 +35,5 @@ function hideLoadingScreen() {
 
 // Simulamos una carga (por ejemplo, esperar 3 segundos)
 window.onload = function() {
-  setTimeout(hideLoadingScreen, 1000);  // Espera 3 segundos antes de mostrar el contenido
+  setTimeout(hideLoadingScreen, 2000);  // Espera 3 segundos antes de mostrar el contenido
 };
