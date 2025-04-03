@@ -20,3 +20,20 @@ document.getElementById("register-form").addEventListener("submit",async(e)=>{
     window.location.href = resJson.redirect;
   }
 })
+
+// scripts.js
+
+// Función para simular la carga
+function hideLoadingScreen() {
+  const loadingScreen = document.getElementById('loading-screen');
+  const mainContent = document.getElementById('main-content');
+
+  // Ocultamos el loading y mostramos el contenido
+  loadingScreen.style.display = 'none';
+  mainContent.style.display = 'flex';
+}
+
+// Simulamos una carga (por ejemplo, esperar 3 segundos)
+window.onload = function() {
+  setTimeout(hideLoadingScreen, 1000);  // Espera 3 segundos antes de mostrar el contenido
+};
