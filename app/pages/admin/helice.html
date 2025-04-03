@@ -245,7 +245,8 @@
             margin-top: 3vh;
             margin-bottom: 3vh;
         }
-        .filtro{
+
+        .filtro {
             display: flex;
             max-width: 1200px;
             margin: 10px auto;
@@ -259,7 +260,27 @@
             align-items: center;
             justify-content: space-evenly;
 
-            
+
+        }
+        #listado{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+        .cardinfo{
+            width: 250px;
+            height: 350px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -285,14 +306,61 @@
     </div>
 
     <div class="filtro">
-        <button class="nav-button">Empresass</button>
+        <button class="nav-button">Empresas</button>
         <button class="nav-button">Universidades</button>
         <button class="nav-button">Emprendimientos</button>
         <button class="nav-button">Startup</button>
         <button class="nav-button">Todos</button>
 
     </div>
+    <div class="main-content" id="listado">
+        <!-- Empresas Card -->
+        <div id="empresa" class="cardinfo">
 
+
+            <img src="http://www.w3.org/2000/svg" alt="Logo Empresa" class="card-icon">
+            <h3 class="card-title">Nombre Empresa</h3>
+            <p class="card-text">Descripción de la empresa.</p>
+
+
+        </div>
+        <div id="empresa" class="cardinfo">
+
+
+            <img src="http://www.w3.org/2000/svg" alt="Logo Empresa" class="card-icon">
+            <h3 class="card-title">Nombre Empresa</h3>
+            <p class="card-text">Descripción de la empresa.</p>
+
+
+        </div>
+        <div id="empresa" class="cardinfo">
+
+
+            <img src="hhttp://www.w3.org/2000/svg" alt="Logo Empresa" class="card-icon">
+            <h3 class="card-title">Nombre Empresa</h3>
+            <p class="card-text">Descripción de la empresa.</p>
+
+
+        </div>
+        <div id="empresa" class="cardinfo">
+
+
+            <img src="hhttp://www.w3.org/2000/svg" alt="Logo Empresa" class="card-icon">
+            <h3 class="card-title">Nombre Empresa</h3>
+            <p class="card-text">Descripción de la empresa.</p>
+
+
+        </div>
+        <div id="empresa" class="cardinfo">
+
+
+            <img src="hhttp://www.w3.org/2000/svg" alt="Logo Empresa" class="card-icon">
+            <h3 class="card-title">Nombre Empresa</h3>
+            <p class="card-text">Descripción de la empresa.</p>
+
+
+        </div>
+    </div>
     <div class="main-content" id="entidades">
 
 

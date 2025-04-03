@@ -7,6 +7,9 @@ document.getElementById("estado").addEventListener("click",()=>{
   console.log("hola");
 var entidades= document.getElementById("entidades");
 entidades.style.display="none";
+var listado= document.getElementById("listado");
+listado.style.display="flex";
+
 })
 
 // Función para obtener el valor de una cookie por su nombre
