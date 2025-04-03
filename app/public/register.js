@@ -3,6 +3,8 @@ const mensajeError = document.getElementsByClassName("error")[0];
 document.getElementById("register-form").addEventListener("submit",async(e)=>{
   e.preventDefault();
   console.log(e.target.children.user.value)
+  // const res = await fetch("http://localhost:4000/api/register",{
+
   const res = await fetch("https://sinaptico-production.up.railway.app/api/register",{
     method:"POST",
     headers:{
@@ -35,5 +37,5 @@ function hideLoadingScreen() {
 
 // Simulamos una carga (por ejemplo, esperar 3 segundos)
 window.onload = function() {
-  setTimeout(hideLoadingScreen, 2000);  // Espera 3 segundos antes de mostrar el contenido
+  setTimeout(hideLoadingScreen, 1000);  // Espera 3 segundos antes de mostrar el contenido
 };

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SINAPTICO</title>
     <script src="admin.js" defer></script>
-    
+
     <style>
         * {
             margin: 0;
@@ -14,25 +14,33 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-        @keyframes destello {
-  0% {
-    opacity: 1;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Sombra inicial */
-  }
-  50% {
-    opacity: 0.5;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 1); /* Sombra brillante */
-  }
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Vuelve a la sombra inicial */
-  }
-}
 
-/* Aplicar la animación al círculo cuando se pasa el ratón sobre la tarjeta */
- .circle-button {
-  animation: destello 1s infinite; /* Animación de destello cada 1 segundo */
-}
+        @keyframes destello {
+            0% {
+                opacity: 1;
+                box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+                /* Sombra inicial */
+            }
+
+            50% {
+                opacity: 0.5;
+                box-shadow: 0 0 20px rgba(59, 130, 246, 1);
+                /* Sombra brillante */
+            }
+
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+                /* Vuelve a la sombra inicial */
+            }
+        }
+
+        /* Aplicar la animación al círculo cuando se pasa el ratón sobre la tarjeta */
+        .circle-button {
+            animation: destello 1s infinite;
+            /* Animación de destello cada 1 segundo */
+        }
+
         body {
             background-color: #f5f5f7;
         }
@@ -83,6 +91,20 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .encabezado {
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            align-items: center;
         }
 
         .cards-container {
@@ -136,7 +158,7 @@
             transform: rotateY(180deg);
             padding: 30px;
         }
-   
+
 
         .card-icon {
             width: 80px;
@@ -208,6 +230,34 @@
             font-size: 60px;
             margin-bottom: 15px;
         }
+
+        .login-btn {
+            background: #7B76F1;
+            color: white;
+            padding: 10px;
+            margin-left: 1vw;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            margin-top: 3vh;
+            margin-bottom: 3vh;
+        }
+        .filtro{
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+
+            background-color: #c5d3f9;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            align-items: center;
+            justify-content: space-evenly;
+
+            
+        }
     </style>
 </head>
 
@@ -223,12 +273,27 @@
 
         </div>
     </div>
-<div>
-</div>
-    <div class="main-content" id="entidades">
+    <div>
+    </div>
+    <div class="encabezado">
         <h2 id="bienvenido">Bienvenido</h2>
+        <button class="login-btn">Crear entidad</button>
 
-        <div class="cards-container"  >
+    </div>
+
+    <div class="filtro">
+        <button class="nav-button">Empresass</button>
+        <button class="nav-button">Universidades</button>
+        <button class="nav-button">Emprendimientos</button>
+        <button class="nav-button">Startup</button>
+        <button class="nav-button">Todos</button>
+
+    </div>
+
+    <div class="main-content" id="entidades">
+
+
+        <div class="cards-container">
             <!-- Estado Card -->
             <div id="estado" class="card">
                 <div class="card-inner">
@@ -239,7 +304,8 @@
                         </svg>
                         <h3 class="card-title">Estado</h3>
                         <p class="card-text">Representa al gobierno y sus instituciones, encargados de formular
-                            políticas, regulaciones y proporcionar recursos que faciliten el desarrollo y la innovación.</p>
+                            políticas, regulaciones y proporcionar recursos que faciliten el desarrollo y la innovación.
+                        </p>
                     </div>
                     <div class="card-back">
                         <div class="circle-button">
