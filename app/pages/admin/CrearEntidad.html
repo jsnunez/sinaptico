@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro de Entidad</title>
+    <link rel="stylesheet" href="/styles/styleform.css">
+    <style>
+        /* Aquí agrego algunos estilos básicos para los formularios */
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        .input-box span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .button input {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .nav-button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #7B76F1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Title section -->
+        <div class="title">Registro Entidad</div>
+        <div class="content">
+            <!-- Entity selection buttons -->
+            <div class="filtro">
+                <button id="Empresa" class="nav-button" onclick="changeForm('Empresa')">Empresa</button>
+                <button class="nav-button" onclick="changeForm('universidad')">universidad</button>
+                <button class="nav-button" onclick="changeForm('emprendimientos')">Emprendimientos</button>
+                <button class="nav-button" onclick="changeForm('startups')">Startup</button>
+                <button class="nav-button" onclick="changeForm('otro')">Todos</button>
+            </div>
+
+            <!-- Registration form -->
+            <form id="registration-form">
+                <div class="user-details" id="user-details">
+                    <!-- Initially empty, fields will be dynamically added based on selection -->
+                </div>
+
+       
+
+                <!-- Dynamic fields based on entity type -->
+                <div id="extra-fields"></div>
+
+                <!-- Submit button -->
+                <div class="button">
+                    <input type="submit" value="Registrar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to change form based on entity selection
+        function changeForm(entityType) {
+            const extraFieldsContainer = document.getElementById('extra-fields');
+            const userDetailsContainer = document.getElementById('user-details');
+            
+            // Clear existing fields first
+            extraFieldsContainer.innerHTML = '';
+            userDetailsContainer.innerHTML = '';
+
+            if (entityType === 'Empresa') {
+                // Add Empresa specific fields
+                userDetailsContainer.innerHTML = `
+                    <div class="input-box">
+                        <span class="details">Razón social</span>
+                        <input type="text" placeholder="Ingrese la razón social" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Número de identificación</span>
+                        <input type="text" placeholder="Ingrese el número de identificación" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Tipo de entidad</span>
+                        <input type="text" placeholder="Ingrese el tipo de entidad" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Naturaleza jurídica</span>
+                        <input type="text" placeholder="Ingrese la naturaleza jurídica" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Actividad económica</span>
+                        <input type="text" placeholder="Ingrese la actividad económica" required>
+                    </div>
+                `;
+            } else if (entityType === 'universidad') {
+                extraFieldsContainer.innerHTML = `
+                    <div class="input-box">
+                        <span class="details">Nombre de la universidad</span>
+                        <input type="text" placeholder="Ingrese el nombre de la universidad" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Año de fundación</span>
+                        <input type="text" placeholder="Ingrese el año de fundación" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Dirección</span>
+                        <input type="text" placeholder="Ingrese la dirección de la universidad" required>
+                    </div>
+                `;
+            } else if (entityType === 'emprendimientos') {
+                extraFieldsContainer.innerHTML = `
+                    <div class="input-box">
+                        <span class="details">Nombre del emprendimiento</span>
+                        <input type="text" placeholder="Ingrese el nombre del emprendimiento" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Sector</span>
+                        <input type="text" placeholder="Ingrese el sector del emprendimiento" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Año de inicio</span>
+                        <input type="text" placeholder="Ingrese el año de inicio" required>
+                    </div>
+                `;
+            } else if (entityType === 'startups') {
+                extraFieldsContainer.innerHTML = `
+                    <div class="input-box">
+                        <span class="details">Nombre de la startup</span>
+                        <input type="text" placeholder="Ingrese el nombre de la startup" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Modelo de negocio</span>
+                        <input type="text" placeholder="Ingrese el modelo de negocio" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Fecha de lanzamiento</span>
+                        <input type="date" placeholder="Ingrese la fecha de lanzamiento" required>
+                    </div>
+                `;
+            } else if (entityType === 'todos') {
+                extraFieldsContainer.innerHTML = `
+                    <div class="input-box">
+                        <span class="details">Descripción</span>
+                        <input type="text" placeholder="Ingrese una breve descripción" required>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize the form with "Empresa" on page load
+        window.onload = function() {
+            changeForm('Empresa');
+        };
+    </script>
+</body>
+
+</html>
