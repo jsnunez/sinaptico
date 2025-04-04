@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-
     color: white;
     margin: 0;
     padding: 0;
@@ -47,28 +46,31 @@ body {
 .stats {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+    gap: 1vw;
+    margin: 2vh 0;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 30vw;
+    height: 30vh;
 }
 
 .stat {
     background: #B2C4FF;
     color: black;
 
-    font-size: medium;
-    padding: 20px;
     border-radius: 100%;
-    width: 100px;
-    height: 100px;
-    align-content:center;
+    width: 7vw;
+
+    height: 7vw;
+    align-content: center;
 }
 
 
 .buttons button {
     margin: 10px;
-    padding: 10px 20px;
+    padding: 1vw 1vh;
+    width: 6vw;
+    font-size: 0.8vw;
     border: none;
     border-radius: 5px;
     background: white;
@@ -76,16 +78,39 @@ body {
     cursor: pointer;
 }
 
-.login-container h2 {
+.buttons {
+    display: flex;
+    justify-content: center;
 
-    font-size: 30px;
+}
+
+h2 {
+
+    font-size: 2vw;
     text-align: center;
-    padding-bottom: 5vh;
+    padding-bottom: 3vh;
 }
 
-.p {
-    margin: 10vw;
+.container h1 {
+
+    font-size: 4vw;
 }
+
+p {
+margin: 0px;
+    font-size: 0.8vw;
+}
+
+.stat i {
+    font-size: 1.5vw;
+}
+
+.stat span {
+    font-size: 1.5vw;
+}
+
+
+
 
 .modal {
     display: none;
@@ -108,24 +133,27 @@ body {
 
 input {
     width: 80%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 1vw;
+    margin: 1vw 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 0.8vw;
 }
 
 .login-btn {
     background: #7B76F1;
     color: white;
-    padding: 10px;
+    font-size: 0.8vw;
+    padding: 1vw;
     border: none;
     border-radius: 100px;
     cursor: pointer;
     margin-top: 3vh;
     margin-bottom: 3vh;
 }
-.escondido{
-display: none;
+
+.escondido {
+    display: none;
 }
 
 /* Estilo del contenedor de carga */
@@ -143,20 +171,25 @@ display: none;
     color: white;
     font-size: 24px;
     text-align: center;
-  }
-  
-  /* Animación del spinner (círculo giratorio) */
-  .spinner {
+}
+
+/* Animación del spinner (círculo giratorio) */
+.spinner {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #3498db;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 2s linear infinite;
-  }
-  
-  /* Definir la animación para el spinner */
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+
+/* Definir la animación para el spinner */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

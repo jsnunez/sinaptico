@@ -4,13 +4,29 @@ document.getElementById("cerrarSesion").addEventListener("click",()=>{
   document.location.href = "/"
 })
 document.getElementById("estado").addEventListener("click",()=>{
-  console.log("hola");
 var entidades= document.getElementById("entidades");
 entidades.style.display="none";
 var listado= document.getElementById("listado");
 listado.style.display="flex";
 
 })
+document.getElementById("empresas").addEventListener("click",()=>{
+var entidades= document.getElementById("entidades");
+entidades.style.display="none";
+var listado= document.getElementById("listado");
+listado.style.display="flex";
+
+})
+document.getElementById("crearEntidad").addEventListener("click",()=>{
+  showModal();
+  
+  })
+  document.getElementById("CerrarModal").addEventListener("click",()=>{
+    closeModal();
+    
+    })
+  
+  
 
 // Función para obtener el valor de una cookie por su nombre
 function obtenerCookie(nombre) {
@@ -32,3 +48,11 @@ function obtenerCookie(nombre) {
 const usuario = obtenerCookie("user");
 
 document.getElementById('bienvenido').innerText = "Bienvenido  " + usuario;
+
+function showModal() {
+  document.getElementById("modalCrerEntidad").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modalCrerEntidad").style.display = "none";
+}

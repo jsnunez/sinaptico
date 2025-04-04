@@ -48,25 +48,24 @@
         .header {
             background-image: url('fondolateral.png');
             background-size: 200px 200px;
-            /* Imagen más pequeña, 200px de ancho y 200px de alto */
 
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 20px 50px;
+            padding: 2vw 5vw;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 3vw;
             font-weight: bold;
         }
 
         .nav {
             display: flex;
-            gap: 15px;
+            gap: 1.5vw;
         }
 
         .nav-button {
@@ -75,7 +74,7 @@
             border: none;
             border-radius: 8px;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 1.2vw;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -282,12 +281,26 @@
             justify-content: center;
             align-items: center;
         }
+
+        .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
     </style>
 </head>
 
 <body>
     <div class="header">
-        <div class="logo">SINAPTICO</div>
+        <div class="logo">SINAPTIC</div>
         <div class="nav">
             <button class="nav-button">Hélice</button>
             <button class="nav-button">Innovacion</button>
@@ -301,12 +314,12 @@
     </div>
     <div class="encabezado">
         <h2 id="bienvenido">Bienvenido</h2>
-        <button class="login-btn">Crear entidad</button>
+        <button id="crearEntidad" class="login-btn">Crear entidad</button>
 
     </div>
 
     <div class="filtro">
-        <button class="nav-button">Empresas</button>
+        <button id="empresas" class="nav-button">Empresas</button>
         <button class="nav-button">Universidades</button>
         <button class="nav-button">Emprendimientos</button>
         <button class="nav-button">Startup</button>
@@ -475,5 +488,9 @@
         </div>
     </div>
 </body>
-
+<div id="modalCrerEntidad" class="modal">
+    <span><i class="bi bi-exclamation-circle"></i></span>
+    <p>SE REQUIERE ESTAR REGISTRADO PARA ACCEDER A ESTA INFORMACIÓN</p>
+    <button id="CerrarModal">Cerrar</button>
+</div>
 </html>

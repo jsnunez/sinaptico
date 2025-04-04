@@ -3,9 +3,9 @@ const mensajeError = document.getElementsByClassName("error")[0];
 document.getElementById("register-form").addEventListener("submit",async(e)=>{
   e.preventDefault();
   console.log(e.target.children.user.value)
-  // const res = await fetch("http://localhost:4000/api/register",{
+  const res = await fetch("http://localhost:4000/api/register",{
 
-  const res = await fetch("https://sinaptico-production.up.railway.app/api/register",{
+  // const res = await fetch("https://sinaptico-production.up.railway.app/api/register",{
     method:"POST",
     headers:{
       "Content-Type" : "application/json"
